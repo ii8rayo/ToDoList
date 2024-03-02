@@ -1,0 +1,123 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+.container {
+    position: relative;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+.content {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    left: 50%;
+    padding: 10vmin;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* Adjust width as needed */
+}
+
+h1 {
+    font-family: monospace;
+}
+
+button {
+    transition: color 0.8s ease-in-out, transform 0.8s ease-in-out, background-color 0.8s ease-in-out;
+}
+
+button:hover {
+    color: #09f;
+    transform: scale(1.1);
+    background-color: rgba(220, 220, 220, 0.756);
+}
+
+.taskItem {
+    font-size: 1.2em; /* Bigger font size */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.taskItem button {
+    margin-left: 10px;
+}
+
+.taskInput {
+    width: 80%; /* Adjust the width as needed */
+    height: 40px; /* Adjust the height as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+    padding: 8px; /* Adjust the padding as needed */
+}
+
+#addButton {
+    width: 10%; /* Match the width of the input box */
+    height: 50px; /* Match the height of the input box */
+    padding: 8px; /* Adjust padding as needed */
+    font-size: 16px; /* Adjust the font size as needed */
+}
+
+/* Responsive styles */
+
+@media only screen and (max-width: 768px) {
+    .taskInput {
+        width: 100%; /* Make the input box full width on smaller screens */
+    }
+
+    #addButton {
+        width: 100%; /* Make the "Add" button full width on smaller screens */
+    }
+}
+
+.checkButton {
+    width: 20px; /* Adjust width and height as needed */
+    height: 20px;
+    border: 2px solid #555; /* Border color for the checkbox */
+    background-color: transparent; /* Transparent background */
+    font-size: 14px; /* Adjust font size as needed */
+    cursor: pointer;
+    outline: none; /* Remove the default outline */
+}
+
+.checkButton.checked {
+    background-color: #09f; /* Background color when checked */
+    border-color: #09f; /* Border color when checked */
+    color: #fff; /* Text color when checked */
+}
+
